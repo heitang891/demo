@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Selection</title>
+</head>
+<body>
+<h2>Course Selection Page</h2>
+<form action="/courseSelection" method="post" th:object="${student}">
+  <h3>Select Courses:</h3>
+  <label th:each="course : ${courses}">
+    <input type="checkbox" th:id="${course}" th:name="selectedCourses" th:value="${course}"/>
+    <span th:text="${course}"></span>
+  </label>
+  <button type="submit">Submit Course Selection</button>
+</form>
+</body>
+</html>

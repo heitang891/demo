@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+</head>
+<body>
+<h2>Personal Information Page</h2>
+<form action="/personalInfo" method="post" th:object="${student}">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" required>
+    <label for="studentId">Student ID:</label>
+    <input type="text" id="studentId" name="studentId" th:field="*{studentId}" required>
+    <label for="grade">Grade:</label>
+    <input type="text" id="grade" name="grade" th:field="*{grade}" required>
+    <label for="major">Major:</label>
+    <input type="text" id="major" name="major" th:field="*{major}" required>
+    <label for="college">College:</label>
+    <input type="text" id="college" name="college" th:field="*{college}" required>
+    <button type="submit">Continue to Course Selection</button>
+</form>
+</body>
+</html>
